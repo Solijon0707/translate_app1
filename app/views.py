@@ -34,9 +34,16 @@ def edit(request , id):
 
 def translation(request):
 	if request.method=='POST':
-		student=request.POST['tran']
-		translator= Translator(to_lang="uz")
+		f=request.POST['from_lang']
+		t=request.POST['to_lang']
+		student=request.POST['text']
+		translator= Translator(from_lang=f,to_lang=t)
 		translation = translator.translate(student)
-		
-		return render(request, 'translate.html',{'translation':translation, 'text': student})
+		return render(request, 'translate.html',{'translation':translation, 'text': student,'f':f})
 	return render(request , 'translate.html')
+
+
+
+
+
+

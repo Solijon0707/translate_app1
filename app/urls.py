@@ -5,6 +5,6 @@ urlpatterns = [
 	path('',index,name='index'),
 	path('edit/<int:id>/',edit,name='edit'),
 	path('delete/<int:id>/',delete,name='delete'),
-	path('translation/',translation, name='translation')
+	path('translation/',translation, name='translation'),
 	
 ]

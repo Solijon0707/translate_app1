@@ -4,27 +4,102 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>translate</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			background-image: url(fon.jpg);
+			background-color:skyblue;
+			background-size: auto;
+		}
+		td {
+			
+			width: 220px;
+			border-radius: 10px;
+		}
+		select {
+			border-radius: 5px;
+			width: 220px
+			height: 30px;
+			font-size: 16px;
+			
+		}
+		option {
+			font-size: 16px;
+			text-align: center;
+		}
+		textarea {
+			width: 220px;
+			height: 180px;
+			border-radius: 10px;
+			padding: 0;
+			margin: 0;
+			font-size: 20px;
+			border: 0px;
+		}
+		button {
+			font-size: 20px;
+			border-radius: 8px;
+			border: 2px solid dodgerblue;
+			background: deepskyblue;
+			padding: 5px 10px;
+		}
+		a {
+			text-decoration: none;
+			font-size: 14px;
+			font-family: sans-serif;
+			margin: 0 20px;
+			color: black;
+		}
+	</style>
 </head>
 <body>
-	<br>
-	<br>
-
-	<div class="container">
-		<hr>
-		<div>
-			<form method="post">
-				{% csrf_token %}
-				<input type="text" name="tran" value="{{ text }}">
-				<button type="submit" class="btn btn-danger">button</button>
-
-			</form>
-			<td>{{ translation }}</td>
+	<h1 style="text-align: center;">Translator</h1>
+	<div style="width: 80%;margin: 0 auto;">
+		<div style="margin: 150px 0px; height: 300px;">
+			<table>
+				<form method="post">
+					{% csrf_token %}
+					<tr style="height: 40px;">
+						<td>
+							<select name="from_lang">
+								<option value="ru">ru</option>
+								<option value="en">en</option>
+								<option value="uz">uz</option>
+							</select>
+						</td>
+						<td></td>
+						<td>
+							
+							<select name="to_lang">
+								<option value="uz">uz</option>
+								<option value="en">en</option>
+								<option value="ru">ru</option>
+							</select>
+						</td>
+					</tr>
+					<tr style="height: 180px;">
+						<td><textarea type="text" name="text" placeholder="Enter..."></textarea></td>
+						<td>
+							<table>
+								<tr>
+									<td></td>
+									<td>
+										<button type="submit">go...</button>
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									
+								</tr>
+							</table>
+						</td>
+						<td><textarea>{{ translation }}</textarea></td>
+					</tr>
+				</form>
+			</table>
 		</div>
-		
 	</div>
+	<a href="http://t.me/the_Sodiqjonov">t.me/the_Sodiqjonov</a>
 </body>
 </html>
